@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-color: ##0a0a0a;
+  --secondary-color: black;
+  --accent-color: #BB5052;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: Poppins, Arial;
+
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 17px;
+  /* Slightly increased width */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, var(--accent-color));
+  border-radius: 10px;
+  /* Inner shadow as border */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.fade-in {
+  @apply opacity-0 transition-opacity duration-700 ease-in;
+}
+
+.fade-in-active {
+  @apply opacity-100;
+}
